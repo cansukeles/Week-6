@@ -7,11 +7,10 @@ public class Main {
         //Creating a new file
         File file = new File("src/Practice.txt");
         try {
-            if (file.createNewFile()) {
-                System.out.println("Created a file: " + file.getName());
-            } else {
-                System.out.println("This file: " + file.getName() + " already exist!");
+            if (!file.exists()) {
+                file.createNewFile();
             }
+
         } catch (IOException e) {
             System.out.println(e.getStackTrace());
         }
